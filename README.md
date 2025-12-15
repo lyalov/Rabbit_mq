@@ -43,8 +43,8 @@ $ rabbitmqctl cluster_status
 ОТВЕТ3
 3.1
  Ноды которые в кластере и с политикой 
-![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabbit-mq_balancer1.png)
-![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabbit-mq_balancer2.jpg
+![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabbit-mq_balancer1.jpg)
+![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabbit-mq_balancer2.jpg)
 
 3.2   Также приложите вывод команды с двух нод:
        rabbitmqctl cluster_status
