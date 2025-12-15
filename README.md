@@ -21,6 +21,7 @@ $ pip install pika
 
 ОТВЕТ 2 
 ![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabbit-mq2.jpg)
+![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabbit-mq3.jpg)
 
 
 
@@ -48,5 +49,6 @@ $ rabbitmqadmin get queue='hello'
 
 
 Приложите скриншот результата работы второго скрипта.
+
 
 
