@@ -43,7 +43,179 @@ $ cat /etc/hosts
 Также приложите вывод команды с двух нод:
 $ rabbitmqctl cluster_status
 
- 3.2 Для закрепления материала снова запустите скрипт producer.py и приложите скриншот выполнения команды на каждой из нод:
+```bash
+root@rmq02:/tmp# rabbitmqctl cluster_status
+Cluster status of node rabbit@rmq02 ...
+Basics
+
+Cluster name: rabbit@rmq02
+
+Disk Nodes
+
+rabbit@rmq01
+rabbit@rmq02
+
+Running Nodes
+
+rabbit@rmq01
+rabbit@rmq02
+
+Versions
+
+rabbit@rmq01: RabbitMQ 3.10.8 on Erlang 25.2.3
+rabbit@rmq02: RabbitMQ 3.10.8 on Erlang 25.2.3
+
+Maintenance status
+
+Node: rabbit@rmq01, status: not under maintenance
+Node: rabbit@rmq02, status: not under maintenance
+
+Alarms
+
+(none)
+
+Network Partitions
+
+(none)
+
+Listeners
+
+Node: rabbit@rmq01, interface: [::], port: 15672, protocol: http, purpose: HTTP API
+Node: rabbit@rmq01, interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication
+Node: rabbit@rmq01, interface: [::], port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0
+Node: rabbit@rmq02, interface: [::], port: 15672, protocol: http, purpose: HTTP API
+Node: rabbit@rmq02, interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication
+Node: rabbit@rmq02, interface: [::], port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0
+
+Feature flags
+
+Flag: classic_mirrored_queue_version, state: enabled
+Flag: drop_unroutable_metric, state: enabled
+Flag: empty_basic_get_metric, state: enabled
+Flag: implicit_default_bindings, state: enabled
+Flag: maintenance_mode_status, state: enabled
+Flag: quorum_queue, state: enabled
+Flag: stream_queue, state: enabled
+Flag: user_limits, state: enabled
+Flag: virtual_host_metadata, state: enabled
+root@rmq02:/tmp# ^C
+root@rmq02:/tmp# rabbitmqctl cluster_status
+Cluster status of node rabbit@rmq02 ...
+Basics
+
+Cluster name: rabbit@rmq02
+
+Disk Nodes
+
+rabbit@rmq01
+rabbit@rmq02
+
+Running Nodes
+
+rabbit@rmq01
+rabbit@rmq02
+
+Versions
+
+rabbit@rmq01: RabbitMQ 3.10.8 on Erlang 25.2.3
+rabbit@rmq02: RabbitMQ 3.10.8 on Erlang 25.2.3
+
+Maintenance status
+
+Node: rabbit@rmq01, status: not under maintenance
+Node: rabbit@rmq02, status: not under maintenance
+
+Alarms
+
+(none)
+
+Network Partitions
+
+(none)
+
+Listeners
+
+Node: rabbit@rmq01, interface: [::], port: 15672, protocol: http, purpose: HTTP API
+Node: rabbit@rmq01, interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication
+Node: rabbit@rmq01, interface: [::], port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0
+Node: rabbit@rmq02, interface: [::], port: 15672, protocol: http, purpose: HTTP API
+Node: rabbit@rmq02, interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication
+Node: rabbit@rmq02, interface: [::], port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0
+
+Feature flags
+
+Flag: classic_mirrored_queue_version, state: enabled
+Flag: drop_unroutable_metric, state: enabled
+Flag: empty_basic_get_metric, state: enabled
+Flag: implicit_default_bindings, state: enabled
+Flag: maintenance_mode_status, state: enabled
+Flag: quorum_queue, state: enabled
+Flag: stream_queue, state: enabled
+Flag: user_limits, state: enabled
+Flag: virtual_host_metadata, state: enabled
+```
+и другая нода :) 
+
+```bash
+root@rmq01:/tmp# rabbitmqctl cluster_status
+Cluster status of node rabbit@rmq01 ...
+Basics
+
+Cluster name: rabbit@rmq01
+
+Disk Nodes
+
+rabbit@rmq01
+rabbit@rmq02
+
+Running Nodes
+
+rabbit@rmq01
+rabbit@rmq02
+
+Versions
+
+rabbit@rmq01: RabbitMQ 3.10.8 on Erlang 25.2.3
+rabbit@rmq02: RabbitMQ 3.10.8 on Erlang 25.2.3
+
+Maintenance status
+
+Node: rabbit@rmq01, status: not under maintenance
+Node: rabbit@rmq02, status: not under maintenance
+
+Alarms
+
+(none)
+
+Network Partitions
+
+(none)
+
+Listeners
+
+Node: rabbit@rmq01, interface: [::], port: 15672, protocol: http, purpose: HTTP API
+Node: rabbit@rmq01, interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication
+Node: rabbit@rmq01, interface: [::], port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0
+Node: rabbit@rmq02, interface: [::], port: 15672, protocol: http, purpose: HTTP API
+Node: rabbit@rmq02, interface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication
+Node: rabbit@rmq02, interface: [::], port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0
+
+Feature flags
+
+Flag: classic_mirrored_queue_version, state: enabled
+Flag: drop_unroutable_metric, state: enabled
+Flag: empty_basic_get_metric, state: enabled
+Flag: implicit_default_bindings, state: enabled
+Flag: maintenance_mode_status, state: enabled
+Flag: quorum_queue, state: enabled
+Flag: stream_queue, state: enabled
+Flag: user_limits, state: enabled
+Flag: virtual_host_metadata, state: enabled
+
+````
+
+
+3.2 Для закрепления материала снова запустите скрипт producer.py и приложите скриншот выполнения команды на каждой из нод:
 $ rabbitmqadmin get queue='hello'
 
 3.3 После чего попробуйте отключить одну из нод, желательно ту, к которой подключались из скрипта, затем поправьте параметры подключения в скрипте consumer.py на вторую ноду и запустите его.
