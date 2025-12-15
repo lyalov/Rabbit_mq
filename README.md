@@ -224,6 +224,10 @@ Flag: virtual_host_metadata, state: enabled
 3.2 Для закрепления материала снова запустите скрипт producer.py и приложите скриншот выполнения команды на каждой из нод:
 $ rabbitmqadmin get queue='hello'
 
+![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabit-mq_balancer3.png)
+![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabit-mq_balancer4.png)
+
+
 3.3 После чего попробуйте отключить одну из нод, желательно ту, к которой подключались из скрипта, затем поправьте параметры подключения в скрипте consumer.py на вторую ноду и запустите его.
 
 Приложите скриншот результата работы второго скрипта.
