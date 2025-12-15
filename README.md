@@ -8,7 +8,7 @@
 
 ОТВЕТ 1
 
-![alt text](https://github.com/username/reponame/blob/branch/path/image.png)
+![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabbit-mq1.jpg)
 
 Задание 2. Отправка и получение сообщений
 Используя приложенные скрипты, проведите тестовую отправку и получение сообщения. Для отправки сообщений необходимо запустить скрипт producer.py.
@@ -46,3 +46,4 @@ $ rabbitmqadmin get queue='hello'
 
 
 Приложите скриншот результата работы второго скрипта.
+
