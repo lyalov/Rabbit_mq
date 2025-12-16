@@ -232,6 +232,7 @@ $ rabbitmqadmin get queue='hello'
 
 Приложите скриншот результата работы второго скрипта.
 
+![alt text](https://github.com/lyalov/Rabbit_mq/blob/main/rabit-mq_balancer5.png)
 
 
 
